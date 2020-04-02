@@ -12,10 +12,12 @@ pip install APIcovidTH
 
 ```sh
 from APIcovidTH import APIcovidTH
-
-c = APIcovidTH()
-c.callAPI()
-print(c)
+texdata = APIcovidTH()
+texdata.callAPI()
+APIcovidTH.LineNoti(texdata, token)
 ```
 
-| สร้างไฟล์ README  | https://dillinger.io/ |
+| ...... | ...... |
+| ------ | ------ |
+| email | kanutsanun.b@gmail.com |
+| สร้างไฟล์ READM | https://dillinger.ior |
