@@ -26,7 +26,17 @@ class APIcovidTH:
         self.Recovered = result['Recovered']
         self.Deaths = result['Deaths']
 
+    @staticmethod
+    def LineNoti(tex, token):
+        url = 'https://notify-api.line.me/api/notify'
+        token = token
+        headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'Bearer '+token}
+        msg = tex
+        r = requests.post(url, headers=headers , data = {'message':msg})        
+        print(r.text)
+
+
 if __name__=="__main__":
-    c = APIcovidTH()
-    c.callAPI()
-    print(c)
+    texdata = APIcovidTH()
+    texdata.callAPI()
+    APIcovidTH.LineNoti(texdata, token)
